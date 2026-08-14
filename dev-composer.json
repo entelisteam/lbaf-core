@@ -1,0 +1,57 @@
+{
+  "name": "entelisteam/lbaf",
+  "description": "Universal PHP framework",
+  "type": "library",
+  "require": {
+    "php": "~8.2",
+    "nikic/fast-route": "^1.3",
+    "psr/log": "^2.0 || ^3.0",
+    "ext-mysqli": "*",
+    "entelisteam/lbaf-hydrator": "dev-main as 1.0.0",
+    "entelisteam/lbaf-exception": "dev-main as 1.0.0",
+    "entelisteam/lbaf-mysql": "dev-main as 1.0.0",
+    "entelisteam/lbaf-rector": "dev-main as 1.0.0",
+    "entelisteam/lbaf-reflection": "dev-main as 1.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Lbaf\\": "src/Lbaf/",
+      "Lbaf\\Rector\\": "rector/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "*",
+      "options": {
+        "symlink": true
+      }
+    }
+  ],
+  "extra": {
+    "lbaf-rector-migrations": "Lbaf\\Rector\\MigrationList"
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "rector:check": "vendor/bin/rector process --dry-run",
+    "rector:fix": "vendor/bin/rector process",
+    "post-update-cmd": "test ! -f vendor/bin/rector || vendor/bin/rector process"
+  },
+  "authors": [
+    {
+      "name": "ENTELISTEAM INC",
+      "email": "welcome@entelis.team",
+      "homepage": "https://entelis.team"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require-dev": {
+    "rector/rector": "^2.3.0",
+    "phpunit/phpunit": "12.5.x-dev"
+  }
+}

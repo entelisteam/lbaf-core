@@ -1,0 +1,7 @@
+.idea
+.claude
+CLAUDE.md
+vendor
+.php-cs-fixer.cache
+/.phpunit*
+/dev-composer.lock
