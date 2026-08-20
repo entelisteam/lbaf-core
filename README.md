@@ -34,7 +34,8 @@ class App extends AbstractApplication {}
 // public/index.php
 require __DIR__ . '/../vendor/autoload.php';
 
-use App\App;use EntelisTeam\Lbaf\Core\Router\FastRouteRouter;use EntelisTeam\Lbaf\Core\Router\Route\RouteGenerator;
+use App\App;use EntelisTeam\Lbaf\Core\Router\FastRouteRouter;
+use EntelisTeam\Lbaf\Core\Router\Route\RouteGenerator;
 
 $app = App::init('Europe/Moscow');          // init(?string $timeZone) — таймзона опциональна
 $app->setLogger($psrLogger);                // опционально, любой PSR-3 LoggerInterface
