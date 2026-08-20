@@ -4,7 +4,7 @@
 ## Install
 
 ```bash
-composer require entelisteam/lbaf
+composer require entelisteam/lbaf-core
 composer require --dev entelisteam/lbaf-rector
 ```
 
