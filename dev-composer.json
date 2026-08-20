@@ -1,5 +1,5 @@
 {
-  "name": "entelisteam/lbaf",
+  "name": "entelisteam/lbaf-core",
   "description": "Universal PHP framework",
   "type": "library",
   "require": {
@@ -15,8 +15,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Lbaf\\": "src/Lbaf/",
-      "Lbaf\\Rector\\": "rector/"
+      "EntelisTeam\\Lbaf\\Core\\": "src/",
+      "EntelisTeam\\Lbaf\\Core\\Rector\\": "rector/"
     }
   },
   "autoload-dev": {
@@ -34,7 +34,7 @@
     }
   ],
   "extra": {
-    "lbaf-rector-migrations": "Lbaf\\Rector\\MigrationList"
+    "lbaf-rector-migrations": "EntelisTeam\\Lbaf\\Core\\Rector\\MigrationList"
   },
   "scripts": {
     "test": "vendor/bin/phpunit",
@@ -42,13 +42,6 @@
     "rector:fix": "vendor/bin/rector process",
     "post-update-cmd": "test ! -f vendor/bin/rector || vendor/bin/rector process"
   },
-  "authors": [
-    {
-      "name": "ENTELISTEAM INC",
-      "email": "welcome@entelis.team",
-      "homepage": "https://entelis.team"
-    }
-  ],
   "minimum-stability": "dev",
   "require-dev": {
     "rector/rector": "^2.3.0",

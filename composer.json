@@ -9,7 +9,7 @@
     "ext-mysqli": "*",
     "entelisteam/lbaf-hydrator": "^1.4",
     "entelisteam/lbaf-exception": "^1.2",
-    "entelisteam/lbaf-mysql": "^1.2",
+    "entelisteam/lbaf-mysql": "^2.0",
     "entelisteam/lbaf-consoletable": "^2.0",
     "entelisteam/lbaf-reflection": "^1.2"
   },
@@ -32,13 +32,12 @@
     "test": "vendor/bin/phpunit",
     "rector:check": "vendor/bin/rector process --dry-run",
     "rector:fix": "vendor/bin/rector process",
-    "post-update-cmd": "test ! -f vendor/bin/rector || vendor/bin/rector process"
+    "post-update-cmd": "test ! -f vendor/bin/rector || vendor/bin/rector process --dry-run"
   },
   "authors": [
     {
-      "name": "ENTELISTEAM INC",
-      "email": "welcome@entelis.team",
-      "homepage": "https://entelis.team"
+      "name": "Dim Entelis",
+      "homepage": "https://github.com/dentelis"
     }
   ],
   "minimum-stability": "dev",

@@ -8,24 +8,10 @@ use EntelisTeam\Lbaf\Core\Router\Attribute\Route;
 
 class InjectEnvController extends AbstractApiController
 {
-    #[Route('GET', '/inject-env/v1')]
-    #[InjectEnv('dbHost')]
-    public function v1(string $dbHost)
-    {
-        return ['value' => $dbHost];
-    }
-
     #[Route('GET', '/inject-env/v2')]
     public function v2(#[InjectEnv] string $dbHost)
     {
         return ['value' => $dbHost];
-    }
-
-    #[Route('GET', '/inject-env/v3')]
-    #[InjectEnv('host', 'DB_HOST')]
-    public function v3(string $host)
-    {
-        return ['value' => $host];
     }
 
     #[Route('GET', '/inject-env/v4')]

@@ -7,23 +7,9 @@ use Tests\integration\Harness;
 
 class InjectEnvTest extends TestCase
 {
-    public function testVariant1MethodLevelKeyMatchesParamName(): void
-    {
-        $response = Harness::http('GET', '/inject-env/v1', env: ['dbHost' => 'localhost']);
-
-        self::assertSame('{"value":"localhost"}', $response->pack());
-    }
-
     public function testVariant2ParameterLevelNoExplicitKey(): void
     {
         $response = Harness::http('GET', '/inject-env/v2', env: ['dbHost' => 'localhost']);
-
-        self::assertSame('{"value":"localhost"}', $response->pack());
-    }
-
-    public function testVariant3MethodLevelExplicitKey(): void
-    {
-        $response = Harness::http('GET', '/inject-env/v3', env: ['DB_HOST' => 'localhost']);
 
         self::assertSame('{"value":"localhost"}', $response->pack());
     }

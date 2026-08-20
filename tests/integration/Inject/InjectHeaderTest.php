@@ -7,23 +7,9 @@ use Tests\integration\Harness;
 
 class InjectHeaderTest extends TestCase
 {
-    public function testVariant1MethodLevelKeyMatchesParamName(): void
-    {
-        $response = Harness::http('GET', '/inject-header/v1', headers: ['authorization' => 'Bearer xyz']);
-
-        self::assertSame('{"value":"Bearer xyz"}', $response->pack());
-    }
-
     public function testVariant2ParameterLevelKeyMatchesParamName(): void
     {
         $response = Harness::http('GET', '/inject-header/v2', headers: ['authorization' => 'Bearer xyz']);
-
-        self::assertSame('{"value":"Bearer xyz"}', $response->pack());
-    }
-
-    public function testVariant3MethodLevelExplicitKey(): void
-    {
-        $response = Harness::http('GET', '/inject-header/v3', headers: ['authorization' => 'Bearer xyz']);
 
         self::assertSame('{"value":"Bearer xyz"}', $response->pack());
     }

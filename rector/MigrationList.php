@@ -6,6 +6,7 @@ namespace EntelisTeam\Lbaf\Core\Rector;
 
 use EntelisTeam\Lbaf\Core\Rector\Migration\Migration_20260106_2152_MoveInjectAttributesToParameters;
 use EntelisTeam\Lbaf\Core\Rector\Migration\Migration_20260814_1200_MoveLbafNamespaceToLbafCore;
+use EntelisTeam\Lbaf\Core\Rector\Migration\Migration_20260818_1200_ReplacePackerTypeWithPackedInject;
 use EntelisTeam\Lbaf\Rector\RectorMigrationListInterface;
 
 /**
@@ -24,6 +25,7 @@ final class MigrationList implements RectorMigrationListInterface
         return [
             Migration_20260106_2152_MoveInjectAttributesToParameters::class,
             Migration_20260814_1200_MoveLbafNamespaceToLbafCore::class,
+            Migration_20260818_1200_ReplacePackerTypeWithPackedInject::class,
         ];
     }
 }

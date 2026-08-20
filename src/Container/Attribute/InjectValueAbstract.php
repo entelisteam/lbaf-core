@@ -4,12 +4,13 @@ namespace EntelisTeam\Lbaf\Core\Container\Attribute;
 
 abstract class InjectValueAbstract
 {
-    protected ?string $param;
-
     /**
-     * Название параметра для замены
-     * @return string
+     * Название параметра для замены.
+     * @todo проверить нужно ли вообще, мы хотим сделать почти все Inject target parameter
      */
+    protected ?string $param = null;
+
+
     function getParam(): ?string
     {
         return $this->param;

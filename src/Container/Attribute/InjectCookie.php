@@ -9,29 +9,20 @@ use Attribute;
  *
  * Примеры:
  *
- * 1. Заполняет одноименным значением
- *    #[InjectCookie('sessionId')]
- *    function validate (string $sessionId)
- *
- * 2. Внедрение через параметр
+ * 1. Внедряем параметр с совпадающим названием
  *    function validate (#[InjectCookie()] string $sessionId)
  *
- * 3. Явно указываем ключ в массиве cookie
- *    #[InjectCookie('session', 'PHPSESSID')]
- *    function validate (string $session)
- *
- * 4. Явный ключ через параметр
+ * 2. Явное указание названия аргумента
  *    function validate (#[InjectCookie('PHPSESSID')] string $session)
  */
-#[Attribute(Attribute::TARGET_METHOD | Attribute::TARGET_PARAMETER | Attribute::IS_REPEATABLE)]
-class InjectCookie extends InjectValueArrayAbstract
+#[Attribute(Attribute::TARGET_PARAMETER)]
+class InjectCookie extends InjectValueArrayDirectAbstract
 {
     /**
-     * @param string $param Название параметра для вставки или название ключа в массиве если это TARGET_PARAMETER
      * @param string|null $key Ключ в массиве
      */
-    public function __construct(protected ?string $param = null, string $key = null)
+    public function __construct(?string $key = null)
     {
-        parent::__construct($_COOKIE, $key ?? $param);
+        parent::__construct($_COOKIE, $key);
     }
 }

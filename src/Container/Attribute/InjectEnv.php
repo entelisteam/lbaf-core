@@ -9,29 +9,20 @@ use Attribute;
  *
  * Примеры:
  *
- * 1. Заполняет одноименным значением
- *    #[InjectEnv('dbHost')]
- *    function connect (string $dbHost)
- *
- * 2. Внедрение через параметр
+ * 1. Внедряем параметр с совпадающим названием
  *    function connect (#[InjectEnv()] string $dbHost)
  *
- * 3. Явно указываем ключ переменной окружения
- *    #[InjectEnv('host', 'DB_HOST')]
- *    function connect (string $host)
- *
- * 4. Явный ключ через параметр
+ * 2. Явное указание названия аргумента
  *    function connect (#[InjectEnv('DB_HOST')] string $host)
  */
-#[Attribute(Attribute::TARGET_METHOD | Attribute::TARGET_PARAMETER | Attribute::IS_REPEATABLE)]
-class InjectEnv extends InjectValueArrayAbstract
+#[Attribute(Attribute::TARGET_PARAMETER)]
+class InjectEnv extends InjectValueArrayDirectAbstract
 {
     /**
-     * @param string $param Название параметра для вставки или название ключа в массиве если это TARGET_PARAMETER
      * @param string|null $key Ключ в массиве
      */
-    public function __construct(protected ?string $param = null, string $key = null)
+    public function __construct(?string $key = null)
     {
-        parent::__construct($_ENV, $key ?? $param);
+        parent::__construct($_ENV, $key);
     }
 }

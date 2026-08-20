@@ -8,24 +8,10 @@ use EntelisTeam\Lbaf\Core\Router\Attribute\Route;
 
 class InjectHeaderController extends AbstractApiController
 {
-    #[Route('GET', '/inject-header/v1')]
-    #[InjectHeader('authorization')]
-    public function v1(string $authorization)
-    {
-        return ['value' => $authorization];
-    }
-
     #[Route('GET', '/inject-header/v2')]
     public function v2(#[InjectHeader] string $authorization)
     {
         return ['value' => $authorization];
-    }
-
-    #[Route('GET', '/inject-header/v3')]
-    #[InjectHeader('auth', 'authorization')]
-    public function v3(string $auth)
-    {
-        return ['value' => $auth];
     }
 
     #[Route('GET', '/inject-header/v4')]

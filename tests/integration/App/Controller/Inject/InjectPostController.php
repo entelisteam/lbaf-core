@@ -10,22 +10,8 @@ use Tests\integration\App\Dto\ItemDto;
 
 class InjectPostController extends AbstractApiController
 {
-    #[Route('POST', '/inject-post/v1')]
-    #[InjectPost('foo')]
-    public function v1(string $foo)
-    {
-        return ['foo' => $foo];
-    }
-
     #[Route('POST', '/inject-post/v2')]
     public function v2(#[InjectPost] string $foo)
-    {
-        return ['foo' => $foo];
-    }
-
-    #[Route('POST', '/inject-post/v3')]
-    #[InjectPost('foo', 'customKey')]
-    public function v3(string $foo)
     {
         return ['foo' => $foo];
     }

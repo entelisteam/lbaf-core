@@ -1,5 +1,5 @@
-# entelisteam/lbaf
-Простой и быстрый PHP framework.
+# entelisteam/lbaf-core
+Базовый пакет простого и быстрого PHP framework.
 
 ## Install
 
@@ -19,7 +19,7 @@ COMPOSER=dev-composer.json composer update
 
 ### Точка входа и инициализация
 
-Своё приложение наследуем от `AbstractApplication` (обычно пустой класс, вся логика во фреймворке):
+Своё приложение наследуем от `AbstractApplication`:
 
 ```php
 // src/App.php
@@ -51,7 +51,7 @@ $app->run();
 - **важно:** скан идёт относительно текущей рабочей директории, поэтому перед `run()` cwd должен указывать на каталог с папкой `Controller/` (пример обхода — `tests/integration/Harness::routes()`, делает `chdir`);
 - на проде передай путь в `$cacheFile` — роуты сериализуются в файл и не пересканируются (`getRoutes(__DIR__.'/cache/routes.php', …)`).
 
-Кастомные определения в контейнер (если рефлексии мало) — до `run()`:
+Кастомные определения в контейнер (если рефлексии мало) — до `run()`, или в конструктор $app (с осторожностью чтобы не вызвать рекурсию).
 
 ```php
 $app->getContainer()->addDefinitions([
@@ -69,7 +69,7 @@ $app->getContainer()->addDefinitions([
 | `AbstractWebController` | HTML | `WebResponse` |
 | `AbstractCliController` | консоль | `CliResponse` |
 
-Метод помечается атрибутом `#[Route]`, возвращаемое значение (массив/скаляр) автоматически оборачивается в нужный Response:
+Метод для Api и Web помечается атрибутом `#[Route]`, возвращаемое значение (массив/скаляр) автоматически оборачивается в нужный Response:
 
 ```php
 namespace App\Controller;
@@ -108,18 +108,12 @@ class UserController extends AbstractApiController
 | `#[InjectEnv]` | `$_ENV` / `getenv()` |
 | `#[InjectValue]` | литеральное значение (только на методе) |
 
-Четыре формы записи (на примере `InjectGet`, ключ `$_GET['foo']`):
+Две формы записи (на примере `InjectGet`, ключ `$_GET['foo']`):
 
 ```php
-#[InjectGet('foo')]                                   // 1. на методе, имя = имя параметра
-public function a(string $foo) {}
+public function a(#[InjectGet] string $foo) {}        //на параметре, ключ = имя параметра
 
-public function b(#[InjectGet] string $foo) {}        // 2. на параметре, ключ = имя параметра
-
-#[InjectGet('foo', 'customKey')]                      // 3. на методе, $_GET['customKey'] → $foo
-public function c(string $foo) {}
-
-public function d(#[InjectGet('customKey')] string $foo) {}  // 4. на параметре, явный ключ
+public function b(#[InjectGet('foo')] string $innerName) {}  //на параметре, явный ключ
 ```
 
 Типизация и массивы (`ArrayTypeOf` гидрирует элементы массива в нужный тип/DTO):

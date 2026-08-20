@@ -10,22 +10,8 @@ use Tests\integration\App\Dto\ItemDto;
 
 class InjectGetController extends AbstractApiController
 {
-    #[Route('GET', '/inject-get/v1')]
-    #[InjectGet('foo')]
-    public function v1(string $foo)
-    {
-        return ['foo' => $foo];
-    }
-
     #[Route('GET', '/inject-get/v2')]
     public function v2(#[InjectGet] string $foo)
-    {
-        return ['foo' => $foo];
-    }
-
-    #[Route('GET', '/inject-get/v3')]
-    #[InjectGet('foo', 'customKey')]
-    public function v3(string $foo)
     {
         return ['foo' => $foo];
     }

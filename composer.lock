@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "278219d8a4c6b8c5a887d06f2fd55bbf",
+    "content-hash": "823131f4857a2f42543b16929f0dfc6a",
     "packages": [
         {
             "name": "entelisteam/lbaf-consoletable",
@@ -173,16 +173,16 @@
         },
         {
             "name": "entelisteam/lbaf-mysql",
-            "version": "1.2.1",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/entelisteam/lbaf-mysql.git",
-                "reference": "6f5e3c2a3add035a0064c2147feaf0fa28a34303"
+                "reference": "b82ba7865475bb3edaebe633a09fdb769cca9ac4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/entelisteam/lbaf-mysql/zipball/6f5e3c2a3add035a0064c2147feaf0fa28a34303",
-                "reference": "6f5e3c2a3add035a0064c2147feaf0fa28a34303",
+                "url": "https://api.github.com/repos/entelisteam/lbaf-mysql/zipball/b82ba7865475bb3edaebe633a09fdb769cca9ac4",
+                "reference": "b82ba7865475bb3edaebe633a09fdb769cca9ac4",
                 "shasum": ""
             },
             "require": {
@@ -226,9 +226,9 @@
                 "mysqli"
             ],
             "support": {
-                "source": "https://github.com/entelisteam/lbaf-mysql/tree/1.2.1"
+                "source": "https://github.com/entelisteam/lbaf-mysql/tree/2.0.0"
             },
-            "time": "2026-07-03T13:18:40+00:00"
+            "time": "2026-08-20T08:40:32+00:00"
         },
         {
             "name": "entelisteam/lbaf-reflection",
@@ -1091,12 +1091,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "83be0fc01fa84547d3d3b56013bee057ba1925a7"
+                "reference": "bde26096c8138bc1d16d9231ba4e46e544f410a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/83be0fc01fa84547d3d3b56013bee057ba1925a7",
-                "reference": "83be0fc01fa84547d3d3b56013bee057ba1925a7",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/bde26096c8138bc1d16d9231ba4e46e544f410a3",
+                "reference": "bde26096c8138bc1d16d9231ba4e46e544f410a3",
                 "shasum": ""
             },
             "require": {
@@ -1173,20 +1173,20 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-08-11T14:12:34+00:00"
+            "time": "2026-08-17T04:44:33+00:00"
         },
         {
             "name": "rector/rector",
-            "version": "2.6.2",
+            "version": "2.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "03cd615cdd5648abb5f10ff3a684fdb976687190"
+                "reference": "7e46709996a4b3dc59e1d6ecbb6a38ace335bd58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/03cd615cdd5648abb5f10ff3a684fdb976687190",
-                "reference": "03cd615cdd5648abb5f10ff3a684fdb976687190",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/7e46709996a4b3dc59e1d6ecbb6a38ace335bd58",
+                "reference": "7e46709996a4b3dc59e1d6ecbb6a38ace335bd58",
                 "shasum": ""
             },
             "require": {
@@ -1225,7 +1225,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/2.6.2"
+                "source": "https://github.com/rectorphp/rector/tree/2.6.3"
             },
             "funding": [
                 {
@@ -1233,7 +1233,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-08-12T06:23:05+00:00"
+            "time": "2026-08-18T22:01:18+00:00"
         },
         {
             "name": "sebastian/cli-parser",

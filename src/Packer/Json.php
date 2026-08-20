@@ -33,8 +33,4 @@ class Json implements PackerInterface
         ];
     }
 
-    public function getType(): PackerType
-    {
-        return PackerType::Json;
-    }
 }

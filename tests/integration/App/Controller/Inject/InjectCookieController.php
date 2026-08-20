@@ -8,24 +8,10 @@ use EntelisTeam\Lbaf\Core\Router\Attribute\Route;
 
 class InjectCookieController extends AbstractApiController
 {
-    #[Route('GET', '/inject-cookie/v1')]
-    #[InjectCookie('sessionId')]
-    public function v1(string $sessionId)
-    {
-        return ['value' => $sessionId];
-    }
-
     #[Route('GET', '/inject-cookie/v2')]
     public function v2(#[InjectCookie] string $sessionId)
     {
         return ['value' => $sessionId];
-    }
-
-    #[Route('GET', '/inject-cookie/v3')]
-    #[InjectCookie('session', 'PHPSESSID')]
-    public function v3(string $session)
-    {
-        return ['value' => $session];
     }
 
     #[Route('GET', '/inject-cookie/v4')]

@@ -7,23 +7,9 @@ use Tests\integration\Harness;
 
 class InjectPostTest extends TestCase
 {
-    public function testVariant1MethodLevelKeyMatchesParamName(): void
-    {
-        $response = Harness::http('POST', '/inject-post/v1', ['foo' => 'hello']);
-
-        self::assertSame('{"foo":"hello"}', $response->pack());
-    }
-
     public function testVariant2ParameterLevelNoExplicitKey(): void
     {
         $response = Harness::http('POST', '/inject-post/v2', ['foo' => 'hello']);
-
-        self::assertSame('{"foo":"hello"}', $response->pack());
-    }
-
-    public function testVariant3MethodLevelExplicitKey(): void
-    {
-        $response = Harness::http('POST', '/inject-post/v3', ['customKey' => 'hello']);
 
         self::assertSame('{"foo":"hello"}', $response->pack());
     }
@@ -35,9 +21,9 @@ class InjectPostTest extends TestCase
         self::assertSame('{"foo":"hello"}', $response->pack());
     }
 
-    public function testVariant3IgnoresParamNameInBody(): void
+    public function testVariant4IgnoresParamNameInBody(): void
     {
-        $response = Harness::http('POST', '/inject-post/v3', ['foo' => 'hello']);
+        $response = Harness::http('POST', '/inject-post/v4', ['foo' => 'hello']);
 
         self::assertSame(400, $response->getHttpResponseCode());
     }
