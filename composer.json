@@ -42,7 +42,6 @@
   ],
   "minimum-stability": "dev",
   "require-dev": {
-    "rector/rector": "^2.3.0",
     "phpunit/phpunit": "12.5.x-dev",
     "entelisteam/lbaf-rector": "^1.0"
   },
