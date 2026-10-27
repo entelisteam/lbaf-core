@@ -7,11 +7,11 @@
     "nikic/fast-route": "^1.3",
     "psr/log": "^2.0 || ^3.0",
     "ext-mysqli": "*",
-    "entelisteam/lbaf-hydrator": "^1.4",
+    "entelisteam/lbaf-hydrator": "^1.4.3",
     "entelisteam/lbaf-exception": "^1.2",
     "entelisteam/lbaf-mysql": "^2.0",
     "entelisteam/lbaf-consoletable": "^2.0",
-    "entelisteam/lbaf-reflection": "^1.2"
+    "entelisteam/lbaf-reflection": "^1.2.2"
   },
   "autoload": {
     "psr-4": {

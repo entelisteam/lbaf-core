@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "332bfdb1f76f24c3442daf7b3afb2d9b",
+    "content-hash": "f742372c64e8dfcdbfd9900ae57ac22d",
     "packages": [
         {
             "name": "entelisteam/lbaf-consoletable",
